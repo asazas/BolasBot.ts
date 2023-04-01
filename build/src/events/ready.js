@@ -24,7 +24,7 @@ const ready_event = {
     execute(discord_client) {
         return __awaiter(this, void 0, void 0, function* () {
             // inicializar bases de datos
-            yield sequelize_1.sequelize.sync({ force: true });
+            yield sequelize_1.sequelize.sync();
             for (const guild_id of discord_client.guilds.cache.map(guild => guild.id)) {
                 const server = yield Server_1.default.findOrCreate({
                     where: { serverDiscordId: guild_id, }

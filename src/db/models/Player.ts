@@ -1,6 +1,6 @@
 import { AllowNull, BelongsToMany, Column, HasMany, Model, Table, Unique } from "sequelize-typescript";
 import Server from "./Server";
-import ServerPlayer from "./ServerPlayer";
+import PlayerServerStatus from "./PlayerServerStatus";
 import Stream from "./Stream";
 import Race from "./Race";
 import RaceResult from "./RaceResult";
@@ -29,8 +29,11 @@ export default class Player extends Model {
     @Column
     mention: string;
 
-    @BelongsToMany(() => Server, () => ServerPlayer)
-    servers: Array<Server & { ServerPlayer: ServerPlayer }>;
+    @BelongsToMany(() => Server, () => PlayerServerStatus)
+    servers: Array<Server & { PlayerServerStatus: PlayerServerStatus }>;
+
+    @HasMany(() => PlayerServerStatus)
+    serverStatuses: PlayerServerStatus[];
 
     @HasMany(() => Stream, { onDelete: "SET NULL" })
     streams: Stream[];

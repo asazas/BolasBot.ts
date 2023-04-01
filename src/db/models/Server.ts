@@ -1,6 +1,6 @@
 import { BelongsToMany, Column, HasMany, Model, Table, Unique } from "sequelize-typescript";
 import Player from "./Player";
-import ServerPlayer from "./ServerPlayer";
+import PlayerServerStatus from "./PlayerServerStatus";
 import Stream from "./Stream";
 import Command from "./Command";
 import RoleCategory from "./RoleCategory";
@@ -31,8 +31,11 @@ export default class Server extends Model {
     @Column
     reactionRolesChannel: string;
 
-    @BelongsToMany(() => Player, () => ServerPlayer)
-    players: Array<Player & { ServerPlayer: ServerPlayer }>;
+    @BelongsToMany(() => Player, () => PlayerServerStatus)
+    players: Array<Player & { PlayerServerStatus: PlayerServerStatus }>;
+
+    @HasMany(() => PlayerServerStatus)
+    playerStatuses: PlayerServerStatus[];
 
     @HasMany(() => Stream)
     streams: Stream[];

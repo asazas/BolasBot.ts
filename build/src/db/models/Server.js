@@ -14,7 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const sequelize_typescript_1 = require("sequelize-typescript");
 const Player_1 = __importDefault(require("./Player"));
-const ServerPlayer_1 = __importDefault(require("./ServerPlayer"));
+const PlayerServerStatus_1 = __importDefault(require("./PlayerServerStatus"));
 const Stream_1 = __importDefault(require("./Stream"));
 const Command_1 = __importDefault(require("./Command"));
 const RoleCategory_1 = __importDefault(require("./RoleCategory"));
@@ -51,9 +51,13 @@ __decorate([
     __metadata("design:type", String)
 ], Server.prototype, "reactionRolesChannel", void 0);
 __decorate([
-    (0, sequelize_typescript_1.BelongsToMany)(() => Player_1.default, () => ServerPlayer_1.default),
+    (0, sequelize_typescript_1.BelongsToMany)(() => Player_1.default, () => PlayerServerStatus_1.default),
     __metadata("design:type", Array)
 ], Server.prototype, "players", void 0);
+__decorate([
+    (0, sequelize_typescript_1.HasMany)(() => PlayerServerStatus_1.default),
+    __metadata("design:type", Array)
+], Server.prototype, "playerStatuses", void 0);
 __decorate([
     (0, sequelize_typescript_1.HasMany)(() => Stream_1.default),
     __metadata("design:type", Array)

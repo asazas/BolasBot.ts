@@ -14,7 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const sequelize_typescript_1 = require("sequelize-typescript");
 const Server_1 = __importDefault(require("./Server"));
-const ServerPlayer_1 = __importDefault(require("./ServerPlayer"));
+const PlayerServerStatus_1 = __importDefault(require("./PlayerServerStatus"));
 const Stream_1 = __importDefault(require("./Stream"));
 const Race_1 = __importDefault(require("./Race"));
 const RaceResult_1 = __importDefault(require("./RaceResult"));
@@ -47,9 +47,13 @@ __decorate([
     __metadata("design:type", String)
 ], Player.prototype, "mention", void 0);
 __decorate([
-    (0, sequelize_typescript_1.BelongsToMany)(() => Server_1.default, () => ServerPlayer_1.default),
+    (0, sequelize_typescript_1.BelongsToMany)(() => Server_1.default, () => PlayerServerStatus_1.default),
     __metadata("design:type", Array)
 ], Player.prototype, "servers", void 0);
+__decorate([
+    (0, sequelize_typescript_1.HasMany)(() => PlayerServerStatus_1.default),
+    __metadata("design:type", Array)
+], Player.prototype, "serverStatuses", void 0);
 __decorate([
     (0, sequelize_typescript_1.HasMany)(() => Stream_1.default, { onDelete: "SET NULL" }),
     __metadata("design:type", Array)
