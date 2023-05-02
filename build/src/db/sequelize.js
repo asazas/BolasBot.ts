@@ -9,5 +9,5 @@ exports.sequelize = new sequelize_typescript_1.Sequelize({
     logging: config_json_1.dbLogging ? console.log : false,
     models: [`${__dirname}/../db/models`]
 });
-exports.role_channels = {};
+exports.role_channels = new Map();
 //# sourceMappingURL=sequelize.js.map

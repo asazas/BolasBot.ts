@@ -8,4 +8,4 @@ export const sequelize = new Sequelize({
     models: [`${__dirname}/../db/models`]
 });
 
-export const role_channels: { [key: string]: string; } = {};
+export const role_channels = new Map<string, string>();

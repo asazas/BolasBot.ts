@@ -9,17 +9,17 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^18.15.10",
-    "@types/validator": "^13.7.14",
-    "@typescript-eslint/eslint-plugin": "^5.56.0",
-    "@typescript-eslint/parser": "^5.56.0",
-    "eslint": "^8.36.0",
-    "typescript": "^5.0.2"
+    "@types/node": "^18.16.3",
+    "@types/validator": "^13.7.15",
+    "@typescript-eslint/eslint-plugin": "^5.59.2",
+    "@typescript-eslint/parser": "^5.59.2",
+    "eslint": "^8.39.0",
+    "typescript": "^5.0.4"
   },
   "dependencies": {
-    "discord.js": "^14.8.0",
+    "discord.js": "^14.10.2",
     "reflect-metadata": "^0.1.13",
-    "sequelize": "^6.30.0",
+    "sequelize": "^6.31.1",
     "sequelize-typescript": "^2.1.5",
     "sqlite3": "^5.1.6"
   }
